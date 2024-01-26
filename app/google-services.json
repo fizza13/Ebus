@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "188304295682",
+    "project_id": "bustracking-5f983",
+    "storage_bucket": "bustracking-5f983.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:188304295682:android:0c47324934b992d8d0e41b",
+        "android_client_info": {
+          "package_name": "com.example.e_bus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDYBM12HLHIbAXwWleE64raQ9fLzmP8Hc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

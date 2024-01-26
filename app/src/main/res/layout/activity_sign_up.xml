@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUp">
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="56dp"
+        android:src="@drawable/bus" />
+
+    <TextView
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="187dp"
+        android:text="@string/join"
+        android:textColor="@color/black"
+        android:textSize="26sp" />
+
+    <TextView
+        android:id="@+id/community"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="215dp"
+        android:layout_marginLeft="30dp"
+        android:text="@string/community"
+        android:textColor="@color/black"
+        android:textSize="26sp" />
+
+    <EditText
+        android:id="@+id/inputuser"
+        android:layout_width="275dp"
+        android:layout_height="42dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/input_bg"
+        android:drawableLeft="@drawable/baseline_person_2_24"
+        android:drawableTint="#9C27B0"
+        android:ems="10"
+        android:hint="Full Name"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+
+        android:textColor="#706E6E"
+        android:textSize="19dp" />
+
+    <EditText
+        android:id="@+id/inputemail"
+        android:layout_width="275dp"
+        android:layout_height="42dp"
+        android:layout_below="@id/inputuser"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/input_bg"
+        android:drawableLeft="@android:drawable/ic_dialog_email"
+        android:drawableTint="#66B807"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="#706E6E"
+        android:textSize="19dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+
+      />
+
+
+    <EditText
+        android:id="@+id/inputpassword"
+        android:layout_width="275dp"
+        android:layout_height="42dp"
+        android:layout_below="@id/inputemail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/input_bg"
+        android:drawableLeft="@android:drawable/ic_lock_lock"
+        android:drawableTint="#FF9800"
+        android:ems="10"
+        android:paddingStart="20dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"
+        android:text="@string/pass"
+        android:textColor="@color/black"
+        android:visibility="visible"
+        android:hint="Password"
+        android:inputType="textPassword"/>
+
+
+    <EditText
+        android:id="@+id/inputPhone"
+        android:layout_width="275dp"
+        android:layout_height="42dp"
+        android:layout_below="@id/inputpassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/input_bg"
+        android:ems="10"
+        android:drawableLeft="@android:drawable/stat_sys_phone_call"
+        android:drawableTint="#3F51B5"
+        android:paddingStart="20dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black"
+        android:visibility="visible"
+        android:hint="Phone Number"
+        android:inputType="phone"/>
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="275dp"
+        android:layout_height="43dp"
+        android:layout_alignBottom="@id/inputPhone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="-61dp"
+        android:backgroundTint="#2196F3"
+        android:ems="10"
+        android:text="@string/as_passenger"
+        android:textColor="@color/white"
+        android:textSize="18dp" />
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="275dp"
+        android:layout_height="43dp"
+        android:layout_alignBottom="@id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="-61dp"
+        android:backgroundTint="#2196F3"
+        android:ems="10"
+        android:text="@string/as_driver"
+        android:textColor="@color/white"
+        android:textSize="18dp" />
+
+
+</RelativeLayout>

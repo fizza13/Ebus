@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <item android:title="General">
+        <menu>
+    <item
+        android:id="@+id/nav_home"
+        android:title="Share Location"
+        android:icon="@drawable/location">
+    </item>
+
+    <item
+        android:title="Stop Sharing"
+        android:id="@+id/setting"
+        android:icon="@drawable/locationdisable">
+    </item>
+            <item
+                android:title="Logout"
+                android:id="@+id/logout"
+                android:icon="@drawable/logout">
+            </item>
+        </menu>
+    </item>
+
+
+
+
+</menu>

@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">E-bus</string>
+    <string name="bus">City Bus </string>
+    <string name="welcome">Say GoodBye to uncertanity and </string>
+    <string name="welcom">Welcome to</string>
+    <string name="bu">hello to real-time convenience... </string>
+    <string name="driver">Click to Proceed </string>
+    <string name="passenger">Login as passenger </string>
+    <string name="driver1">Login as driver </string>
+    <string name="email">Email Address </string>
+    <string name="pass">Password </string>
+    <string name="login">Login </string>
+    <string name="user">New user?</string>
+    <string name="signup">Signup</string>
+    <string name="join">Join City Bus</string>
+    <string name="community">Community</string>
+    <string name="name">Full Name</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <string name="my_map_api_key">AIzaSyBgZNdf7ck4QX1m_pK3KhJCk_1dxhSWC6w</string>
+    <string name="search">Search Bus</string>
+    <string name="Contact">Contact us</string>
+    <string name="Email">Email Us At</string>
+    <string name="E">fizzashoaib13@gmail.com</string>
+    <string name="logout">Logout</string>
+    <string name="phone_no">Phone No</string>
+    <string name="ask_your_query">Ask your Query</string>
+    <string name="send_your_message">Send your message</string>
+    <string name="nav">Navigate your City with ease</string>
+    <string name="nearby">Nearby Stations</string>
+    <string name="set">Set Reminders</string>
+    <string name="dest">Find Schedule</string>
+    <string name="C">03321984801</string>
+    <string name="add_reminder_description">Add Reminder</string>
+    <string name="as_driver">Signup as Driver</string>
+    <string name="as_passenger">Signup as Passenger</string>
+</resources>
