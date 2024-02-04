@@ -35,6 +35,7 @@ import com.google.android.gms.location.LocationServices;
 import android.location.Location;
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.os.Handler;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -67,6 +68,10 @@ public class Dmain extends AppCompatActivity implements OnMapReadyCallback,
     GoogleApiClient mGoogleApiClient;
     LocationRequest mLocationRequest;
     private DatabaseReference databaseReference;
+    // Handler for simulating continuous location updates
+    private Handler handler;
+    private static final int UPDATE_INTERVAL = 5000;
+
 
 
 
@@ -79,7 +84,8 @@ public class Dmain extends AppCompatActivity implements OnMapReadyCallback,
 
 
 
-
+        // Initialize the handler
+        handler = new Handler();
         SupportMapFragment mapFragment=(SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
@@ -149,7 +155,41 @@ public class Dmain extends AppCompatActivity implements OnMapReadyCallback,
             buildGoogleApiClient();
             mMap.setMyLocationEnabled(true);
         }
+        // Create a marker for the initial location
+        mCurrLocationMarker = mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(33.5620696, 73.0740113))
+                .title("Marker in current location")
+                .icon(BitmapFromDrawable(this, R.drawable.bus1)));
+
+        // Start simulating continuous updates
+        simulateContinuousUpdates();
     }
+
+    private void simulateContinuousUpdates() {
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Simulate location change by moving the marker
+                simulateLocationChange();
+                // Schedule the next update
+                handler.postDelayed(this, UPDATE_INTERVAL);
+            }
+
+            private void simulateLocationChange() {
+                LatLng currentLatLng = mCurrLocationMarker.getPosition();
+                double newLat = currentLatLng.latitude + 0.0001; // Simulate a small change in latitude
+                double newLng = currentLatLng.longitude + 0.0001; // Simulate a small change in longitude
+
+                // Update the marker position
+                LatLng newLatLng = new LatLng(newLat, newLng);
+                mCurrLocationMarker.setPosition(newLatLng);
+
+                // Move camera to the updated position
+                mMap.animateCamera(CameraUpdateFactory.newLatLng(newLatLng));
+            }
+        }, UPDATE_INTERVAL);
+    }
+
     protected synchronized void buildGoogleApiClient() {
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -191,9 +231,7 @@ public class Dmain extends AppCompatActivity implements OnMapReadyCallback,
     public void onLocationChanged(@NonNull Location location) {
         // Remove the previous location marker if it exists
         mLastLocation = location;
-        if (mCurrLocationMarker != null) {
-            mCurrLocationMarker.remove();
-        }
+
 
         LocationHelper helper = new LocationHelper(
                 location.getLongitude(),
@@ -216,19 +254,9 @@ public class Dmain extends AppCompatActivity implements OnMapReadyCallback,
                         }
                     }
                 });
-// Create LatLng object with the current location coordinates
+// Update the marker position
         LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-        MarkerOptions markerOptions = new MarkerOptions();
-        markerOptions.position(latLng);
-        markerOptions.title("Current Position");
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
-        mCurrLocationMarker = mMap.addMarker(new MarkerOptions()
-                // on below line specifying the position where we have to add the marker.
-                .position(latLng)
-                // on below line specifying the title for our marker.
-                .title("Marker in current loction")
-                // on below line specifying the icon for our marker.
-                .icon(BitmapFromDrawable(this, R.drawable.bus1)));
+        mCurrLocationMarker.setPosition(latLng);
 
         //move map camera
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
